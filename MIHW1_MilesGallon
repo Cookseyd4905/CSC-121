@@ -1,0 +1,40 @@
+# 26 August 2019
+# CSC-121 M1HW1 – Miles Per Gallon
+# Dustin Cooksey
+# This project calculates miles per gallon for a driver
+# using multiple tanks of gas for a trip.
+
+def Main():
+    
+## Set the inital test for the loop and
+## get input from the user.
+    
+    gallons_Used = float(input("Please enter the gallons " 
+                              "used or -1 to terminate: "))
+    
+## Test for the condition to run the loop.    
+    
+    while gallons_Used > 0:
+        
+## Get the rest of the needed input from the user.
+        
+        miles_Driven = float(input("Please enter the amount"
+                                   "of miles driven: "))
+
+## Perform your calculations.
+         
+        mpg = miles_Driven / gallons_Used
+        
+## Print the information calculated
+         
+        print("The miles/gallon for this tank was", mpg)
+
+## Give the user the option to exit out of the loop
+## or run the program again.
+        
+        gallons_Used = float(input("Please enter the gallons"
+                               " used or -1 to terminate: "))
+    
+    
+    
+Main()
