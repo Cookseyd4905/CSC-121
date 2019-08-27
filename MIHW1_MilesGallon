@@ -9,6 +9,9 @@ def Main():
 ## Set the inital test for the loop and
 ## get input from the user.
     
+    overallMPG = 0
+    total_Gallons = 0
+    total_Miles_Driven = 0
     gallons_Used = float(input("Please enter the gallons " 
                               "used or -1 to terminate: "))
     
@@ -19,7 +22,7 @@ def Main():
 ## Get the rest of the needed input from the user.
         
         miles_Driven = float(input("Please enter the amount"
-                                   "of miles driven: "))
+                                   " of miles driven: "))
 
 ## Perform your calculations.
          
@@ -29,12 +32,21 @@ def Main():
          
         print("The miles/gallon for this tank was", mpg)
 
+## Keep a running count of the totals for 
+## miles driven and gallons used.
+        
+        total_Gallons = total_Gallons + gallons_Used
+        total_Miles_Driven = total_Miles_Driven + miles_Driven
+        
 ## Give the user the option to exit out of the loop
 ## or run the program again.
         
         gallons_Used = float(input("Please enter the gallons"
-                               " used or -1 to terminate: "))
+                                   " used or -1 to terminate"))
+## Calculate the total MPG for the driver.
+        
+    overallMPG = total_Miles_Driven / total_Gallons
     
-    
+    print("Your total average miles/gallon was", overallMPG)
     
 Main()
