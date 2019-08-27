@@ -1,3 +1,4 @@
+    
 # 26 August 2019
 # CSC-121 M1HW1 – Miles Per Gallon
 # Dustin Cooksey
@@ -50,3 +51,11 @@ def Main():
     print("Your total average miles/gallon was", overallMPG)
     
 Main()
+
+## Set inital totals to 0. 
+## Ask the user for the amount of gallons used.
+## Use gallons used to begin while loop setting -1 as sentinal.
+## Ask the user for miles driven.
+## Calculate and display mpg using miles driven / gallons used.
+## Give user option to exit out of while loop or use another entry.
+## Calculate and display total MPG for the driver.
