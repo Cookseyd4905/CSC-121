@@ -1,0 +1,31 @@
+## Dustin Cooksey
+## Aug 28 2019
+## CSC -121 M2HW - Computer Assisted Multiplication
+## This program presents the user with a multiplication
+## problem and then returns whether the input answer is
+## is correct or wrong.
+
+import random
+
+def Main():
+    num1 = random.randint(1,9)
+    num2 = random.randint(1,9)
+
+    correct_Answer = num1 * num2
+    
+    print(correct_Answer)
+    print("How much is", num1, "times ", num2)
+    user_Answer = int(input())
+ 
+    while user_Answer != correct_Answer:
+        if user_Answer > correct_Answer:
+            print("Your answer was too high!")
+    
+        else:
+            print("Your answer was too low!")
+    
+        user_Answer = int(input("How much is "+ str(num1)+ "times "+ str(num2)))    
+           
+    print("Good Job!")
+    
+Main()
