@@ -10,17 +10,19 @@ import random
 def Main():
     print("Welcome to the Multiplication Game!")
     print("Please make a selection from the following options!")
-    choice = int(input("Enter 1 for easy game: "))
+    print("Enter 1 for the easy game")
+    choice = int(input("Enter 2 for the hard game: "))
     if choice == 1:
         EasyGame()
+    elif choice == 2:
+        HardGame()
     else:
         print("Thanks for playing!")
 
 def EasyGame():
     num1 = random.randint(1,9)
     num2 = random.randint(1,9)
-    computer_Response random.randint(1,3)
-
+    computer_Response = random.randint(1,3)
     correct_Answer = num1 * num2
     
     print(correct_Answer)
@@ -28,22 +30,71 @@ def EasyGame():
     user_Answer = int(input())
  
     while user_Answer != correct_Answer:
-        if user_Answer > correct_Answer:
-            print("Your answer was too high!")
-    
+        computer_Response = random.randint(1,3)
+        if computer_Response == 1:
+            print("No. Please try again.")
+        elif computer_Response == 2:
+            print("Wrong. Try once more.")
         else:
-            print("Your answer was too low!")
+            print("No. Keep trying.")
+        user_Answer = int(input("How much is "+ str(num1)+ " times "+ str(num2)+ ": "))
+         
+    if computer_Response == 1:
+        print("Very good!")
+    elif computer_Response == 2:
+        print("Nice work!")
+    else:
+        print("Keep up the good work!")
     
-        user_Answer = int(input("How much is "+ str(num1)+ " times "+ str(num2)))    
            
-    print("Good Job!")
     print("Do you want to play again?")
-    print("Enter 1 for yes")
-    play_Again = int(input("Enter 2 for no: "))
+    print("Enter 1 to play the easy game again")
+    print("Enter 2 to play the hard game")
+    play_Again = int(input("Enter 3 to exit: "))
     if play_Again == 1:
-          EasyGame()
+        EasyGame()
+    elif play_Again == 2:
+        HardGame()
     else:
           print("Thanks for playing!")
+          
+def HardGame():
+    num1 = random.randint(1,99)
+    num2 = random.randint(1,99)
+    computer_Response = random.randint(1,3)
+    correct_Answer = num1 * num2
     
+    print(correct_Answer)
+    print("How much is", num1, "times ", num2)
+    user_Answer = int(input())
+ 
+    while user_Answer != correct_Answer:
+        computer_Response = random.randint(1,3)
+        if computer_Response == 1:
+            print("No. Please try again.")
+        elif computer_Response == 2:
+            print("Wrong. Try once more.")
+        else:
+            print("No. Keep trying.")
+        user_Answer = int(input("How much is "+ str(num1)+ " times "+ str(num2)+ ": "))
+         
+    if computer_Response == 1:
+        print("Very good!")
+    elif computer_Response == 2:
+        print("Nice work!")
+    else:
+        print("Keep up the good work!")
+    
+           
+    print("Do you want to play again?")
+    print("Enter 1 to play the easy game")
+    print("Enter 2 to play the hard game again")
+    play_Again = int(input("Enter 3 to exit: "))
+    if play_Again == 1:
+        EasyGame()
+    elif play_Again == 2:
+        HardGame()
+    else:
+          print("Thanks for playing!")
     
 Main()
