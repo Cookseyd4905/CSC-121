@@ -5,21 +5,39 @@
 ## problem and then returns whether the input answer is
 ## is correct or wrong.
 
-import random
+import EasyGame as e
+import HardGame as h
 
 def Main():
+    """ main function in main.py to call other functions"""
+    
     print("Welcome to the Multiplication Game!")
     print("Please make a selection from the following options!")
     print("Enter 1 for the easy game.")
     choice = int(input("Enter 2 for the hard game: "))
     if choice == 1:
-        EasyGame()
+       e.EasyGame()
     elif choice == 2:
-        HardGame()
+       h.HardGame()
     else:
         print("Thanks for playing!")
+    
+Main()
+
+
+## Dustin Cooksey
+## Aug 28 2019
+## CSC -121 M2HW - Computer Assisted Multiplication
+## This program presents the user with a multiplication
+## problem and then returns whether the input answer is
+## is correct or wrong.
+
+import random
+import HardGame as h
 
 def EasyGame():
+    """Function to run the easier of the two games"""
+
     num1 = random.randint(1,9)
     num2 = random.randint(1,9)
     computer_Response = random.randint(1,3)
@@ -54,11 +72,25 @@ def EasyGame():
     if play_Again == 1:
         EasyGame()
     elif play_Again == 2:
-        HardGame()
+        h.HardGame()
     else:
           print("Thanks for playing!")
           
+## Dustin Cooksey
+## Aug 28 2019
+## CSC -121 M2HW - Computer Assisted Multiplication
+## This program presents the user with a multiplication
+## problem and then returns whether the input answer is
+## is correct or wrong.
+
+import random
+import EasyGame as e
+
 def HardGame():
+    
+    """Function to run the more difficult
+     of the two games"""
+    
     num1 = random.randint(1,99)
     num2 = random.randint(1,99)
     computer_Response = random.randint(1,3)
@@ -91,10 +123,9 @@ def HardGame():
     print("Enter 2 to play the hard game again.")
     play_Again = int(input("Enter 3 to exit: "))
     if play_Again == 1:
-        EasyGame()
+        e.EasyGame()
     elif play_Again == 2:
         HardGame()
     else:
           print("Thanks for playing!")
-    
-Main()
+
