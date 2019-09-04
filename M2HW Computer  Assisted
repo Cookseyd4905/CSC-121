@@ -10,7 +10,7 @@ import random
 def Main():
     print("Welcome to the Multiplication Game!")
     print("Please make a selection from the following options!")
-    print("Enter 1 for the easy game")
+    print("Enter 1 for the easy game.")
     choice = int(input("Enter 2 for the hard game: "))
     if choice == 1:
         EasyGame()
@@ -48,8 +48,8 @@ def EasyGame():
     
            
     print("Do you want to play again?")
-    print("Enter 1 to play the easy game again")
-    print("Enter 2 to play the hard game")
+    print("Enter 1 to play the easy game again.")
+    print("Enter 2 to play the hard game.")
     play_Again = int(input("Enter 3 to exit: "))
     if play_Again == 1:
         EasyGame()
@@ -87,8 +87,8 @@ def HardGame():
     
            
     print("Do you want to play again?")
-    print("Enter 1 to play the easy game")
-    print("Enter 2 to play the hard game again")
+    print("Enter 1 to play the easy game.")
+    print("Enter 2 to play the hard game again.")
     play_Again = int(input("Enter 3 to exit: "))
     if play_Again == 1:
         EasyGame()
