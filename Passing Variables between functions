@@ -1,0 +1,30 @@
+def main():
+    """Main function in main.py to call other functions"""
+    
+    print("This program calculates gross pay")
+    
+    hoursWorked, payRate = GetInput()
+    
+    gross = CalcGrossPay(hoursWorked, payRate)
+    
+    
+    print("Your gross pay is ", gross)
+    
+def GetInput():
+    
+    hoursWorked = int(input("How many hours did you work? "))
+    
+    payRate = int(input("What is your pay rate? $"))
+    
+    return(hoursWorked, payRate)
+    
+def CalcGrossPay(hoursWorked, payRate):
+        
+    grossPay = payRate * hoursWorked
+    
+    return(grossPay)
+    
+    
+    
+    
+main()
