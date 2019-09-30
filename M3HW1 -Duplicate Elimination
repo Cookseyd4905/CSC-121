@@ -1,0 +1,24 @@
+# 27 September 2019
+# CSC-121 M3HW1  Duplicate Elimination
+# Dustin Cooksey
+# 
+# 
+
+def main():
+    list = []
+    values = int(input("How many values would you like to enter: "))
+    
+    for i in range(values):
+
+        entry = input("enter element #"+str(i)+": ")
+        #statement below appends value entered to end of list
+        list.append(entry)
+        print(list)
+    
+    list.sort()
+    print(list)
+    
+    
+    
+    
+main()
