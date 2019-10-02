@@ -1,16 +1,16 @@
-  
 # 27 September 2019
 # CSC-121 M3HW1  Duplicate Elimination
 # Dustin Cooksey
-# 
-# 
+# This program takes a list of either strings or numbers and returns all of 
+# the values in a sorted order as well as the unique values in a sorted order.
+
 import numbered_list as n
 import String_List as s
 def main():
     """ main function in main.py to call other functions"""
     
-    print("Welcome to the list sorter!")
-    print("Please make a selection from the following options!")
+    print("Welcome to the list sorter!\n")
+    print("Please make a selection from the following options!\n" )
     print("Enter 1 to sort a numbered list")
     choice = int(input("Enter 2 to sort a list of strings: "))
     if choice == 1:
@@ -21,6 +21,22 @@ def main():
         print("Goodbye!")
 main()
 
+
+## Give the user the opportunity to choose to enter a list of
+## either integers or string values.
+
+## Ask the user how many values they would like to enter.
+
+## Store the values the user enters in a list.
+
+## Use the sort function to sort the values from smallest to largest.
+
+## Print out the values in a sorted order.
+
+## Use a for loop to store the unique values in a new list containing only
+## values that are unique.
+
+## Print the unique values in a sorted order.
 
 def numbered_list():
     numbers = []
@@ -35,19 +51,17 @@ def numbered_list():
     list.sort(numbers)
     
     print("Your list sorted from smallest to larger is")
-    print("----------------------------")
     print(numbers)
     
     
     unique_list = (numbers)
-    print("The unique numbers in your list are")
+    print("The unique numbers in your list are\n")
     for i in unique_list:
         if i in unique_list:
             unique_list.remove(i)
     print(unique_list)
     
-    
-    def string_list():
+def string_list():
     string_list = []
     values = int(input("How many values would you like to enter: "))
     
@@ -60,14 +74,14 @@ def numbered_list():
     list.sort(string_list)
     
     print("Your list sorted from smallest to larger is")
-    print("----------------------------")
     print(string_list)
     
     list.sort(string_list)
      
     unique_list = []
-    print("The unique numbers in your list are")
+    print("The unique numbers in your list are\n")
     for i in string_list:
         if i not in unique_list:
             unique_list.append(i)
     print(unique_list)
+    
