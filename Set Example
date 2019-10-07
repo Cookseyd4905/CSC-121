@@ -11,7 +11,7 @@ def user_input():
     closing_amount = 0
     cont = 'y'
      
-    while cont == 'y':
+    while cont.lower == 'y':
         key = input("Enter the expense name: ")
         value = int(input("Enter the amount: "))
         
