@@ -1,0 +1,50 @@
+# 21 October 2019
+# CSC121 M4HW – Dictionary Manipulations
+# Dustin Cooksey
+# This program takes a set of Countries with abbreviations and 
+# munipulates it in different ways.
+
+def main():
+    
+    tlds = {'Canada': 'ca','United States': 'us','Mexico': 'mx'}
+
+## a) Check whether 'Canada' is in the dictionary
+    if 'Canada'in tlds:
+        print("true")
+    else:
+        print("false")
+## b) Check whether 'France' is in dictionary
+        
+    if 'France'in tlds:
+        print("true")
+    else:
+        print("false")   
+## c) Iterate through the key value pairs and display them in 
+## a two column format.
+
+    print(f'{"COUNTRY ":<15}{"TLD":<10}')
+    print("--------------------------")
+    for key, value in tlds.items():
+            print(f'{key:<15}{value:<10}')
+         
+## d) Add the key pair 'Sweden' and "sw'     
+            
+    tlds['Sweden'] ='sw'
+    
+## e) Update the value for the key 'Sweden' 
+    
+    tlds['Sweden'] = 'se'
+    
+## f) Reverse the keys and values using comprehension
+    
+    tlds_inverted = {value: key for key, value in
+                     tlds.items()}
+    print(tlds_inverted)
+    
+## g) Use a dictionary comprehension to convert
+## names to all upercase
+    
+    for k,v in tlds.items():
+        tlds_CAPS = {k.upper():v.upper()}
+    print(tlds_CAPS)
+main()
