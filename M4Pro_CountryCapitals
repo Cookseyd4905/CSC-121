@@ -31,12 +31,13 @@ def game():
              'South Korea' : 'Seoul', 'Sweden' : 'Stockholm', 'Turkey' : 'Ankara',
              'United States' : 'Washington'}
     country, capital = random.choice(list(quiz.items()))
-    guess = input('What is the capital of ', country, '? ')
-
+    
+    print('What is the capital of ', country, '? ')
+    guess = input()
     if guess == capital:
         print('Good job')
     else:
         print('Sorry')
     main()
     
-main()
+main())
