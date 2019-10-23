@@ -1,0 +1,42 @@
+# 22 October 2019
+# CSC121  M4Pro â€“ Country Capitals
+# Dustin Cooksey
+# This program takes a set of Countries with abbreviations and 
+# munipulates it in different ways.
+
+import random
+
+def main():
+       
+    print('Would you like to play the capitals game? ')
+            
+    again = input('Enter ''y'' for yes or ''n'' for no: ')
+        
+        
+    if again == 'y':
+        game()
+    else:
+        print('Thanks for playing!')
+            
+ 
+
+
+def game():
+    quiz = {'Bahamas' : 'Nassau', 'Belgium' : 'Brussels', 'Brazil' : 'Brasilia',
+             'Canada' : 'Ottawa', 'China' : 'Bejing', 'Cuba' : 'Havana',
+             'Denmark' : 'Copenhagen', 'Estonia' : 'Tallinn',
+             'India' : 'New Delhi', 'Italy' : 'Rome', 'Mexic' : 'Mexico City',
+             'North Korea' : 'Pyongyang', 'Pakistan' : 'Islamabad',
+             'Poland' : 'Warsaw', 'Romania' : 'Bucharest', 'Somalia' : 'Mogadishu',
+             'South Korea' : 'Seoul', 'Sweden' : 'Stockholm', 'Turkey' : 'Ankara',
+             'United States' : 'Washington'}
+    country, capital = random.choice(list(quiz.items()))
+    guess = input('What is the capital of ', country, '? ')
+
+    if guess == capital:
+        print('Good job')
+    else:
+        print('Sorry')
+    main()
+    
+main()
