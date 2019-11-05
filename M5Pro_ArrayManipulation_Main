@@ -4,6 +4,115 @@
 # This program takes an array and munipulates it in
 # different ways.
 
+import numpy as n
+
+def main():
+    user_array = []
+    menu(user_array)
+        
+def menu(user_array):
+    print(f'{"MENU":<4}')
+    print("----------------------------------")
+    print('1) Create a 2-by-2 Array')
+    print('2) Display square Value for elements in array')
+    print('3) Add 3 to every element and display the result')
+    print('4) Multiply every element and display the result')
+    print('5) Exit')
+    
+  
+    
+    user_input = input("Please make a choice: ")
+    print()
+    
+    if user_input == '1':
+        create_array()
+    elif user_input == '2':
+         square_array(user_array)
+    elif user_input =='3':
+         plus_array(user_array)
+    elif user_input == '4':
+         multy_array(user_array)
+    else:
+        print('Goodbye!')
+    
+
+def create_array():
+    user_list = []
+    
+    x = 4
+    
+    for num in range (0,x):
+      user_list.append(int(input("Please enter a whole number: ")))
+      
+    user_array = n.asarray(user_list)
+    
+    user_array = n.reshape(user_array, (2, 2))
+    
+    for row in user_array:
+        for column in row:
+            print(column, end=' ')
+        print()
+    menu(user_array)
+  
+    
+
+
+
+def square_array(user_array):
+    
+    if len(user_array) == 0:
+        print('No array has been created')
+        print()
+        user_array = []
+        menu(user_array)
+    else:
+    
+        new_array = n.square(user_array)
+        for row in new_array:
+            for column in row:
+                print(column, end=' ')
+            print()
+        menu(user_array)
+         
+        
+def plus_array(user_array):
+    
+    if len(user_array) == 0:
+        print('No array has been created')
+        print()
+        user_array = []
+        menu(user_array)
+    else:
+    
+        new_array = user_array + 3
+        for row in new_array:
+            for column in row:
+                print(column, end=' ')
+                print()     
+        menu(user_array)
+        
+def multy_array(user_array):
+    
+    if len(user_array) == 0:
+        print('No array has been created')
+        print()
+        user_array = []
+        menu(user_array)
+    else:
+    
+        new_array = user_array * 5
+        for row in new_array:
+            for column in row:
+                print(column, end=' ')
+                print()     
+        menu(user_array)
+
+main()# 01 November 2019
+# CSC121 M5Pro – Array Manipulations
+# Dustin Cooksey
+# This program takes an array and munipulates it in
+# different ways.
+
 import M5_Functions as m 
 
 def main():
