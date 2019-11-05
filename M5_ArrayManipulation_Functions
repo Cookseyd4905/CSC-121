@@ -1,0 +1,48 @@
+import pandas as p
+import numpy as n
+
+def create_array():
+    user_list = []
+    
+    x = 4
+    
+    for num in range (0,x):
+      user_list.append(int(input("Please enter a whole number: ")))
+      
+    user_array = n.asarray(user_list)
+    
+    user_array = n.reshape(user_array, (2, 2))
+    
+    for row in user_array:
+        for column in row:
+            print(column, end=' ')
+        print()
+    return user_array 
+  
+    
+
+
+
+def square_array(user_array):
+    
+    new_array = n.square(user_array)
+    for row in new_array:
+        for column in row:
+            print(column, end=' ')
+        print()
+        
+def plus_array(user_array):
+    
+    new_array = user_array + 3
+    for row in new_array:
+        for column in row:
+            print(column, end=' ')
+            print()     
+            
+def multy_array(user_array):
+    
+    new_array = user_array * 5
+    for row in new_array:
+        for column in row:
+            print(column, end=' ')
+            print()     
