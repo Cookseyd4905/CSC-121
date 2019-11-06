@@ -10,16 +10,27 @@ import numpy as n
 
 def main():
     
+    test_names = []
     gradebook_dict = {}
     values = int(input('How many tests are you storing? '))
 
     keys = int(input('How many students are you storing? '))
     
+    
+    
     for k in range(keys):
-        gradebook_dict[k] = input('Please enter a name: ')
+        name = input('What is the name of the student: ')
+        grades = []
         for j in range(values):
-            gradebook_dict[j] = input('Please enter the grade: ')
-    print(gradebook_dict)
+            grade = input('What is the test grade: ')
+            grades.append(grade)
+            gradebook_dict[name] = [grades]
+    for i in range(values):
+        test = input('What is the name of the test?: ')
+        test_names.append(test)
+        
+    
+    
       
 
 
