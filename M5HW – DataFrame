@@ -1,5 +1,5 @@
 # 01 November 2019
-# CSC121 M5HW – DataFrame
+# CSC121 M5HW â€“ DataFrame
 # Dustin Cooksey
 # 
 # 
@@ -11,16 +11,16 @@ import numpy as n
 def main():
     
     gradebook_dict = {}
-    user_tests = input(int('How many test are you storing? '))
+    values = int(input('How many tests are you storing? '))
 
-    user_students = input(int('How many students took the test? '))
+    keys = int(input('How many students are you storing? '))
     
-    for user_students in keys:
-        new_key = input('Please enter the students name: ')
-        gradebook_dict[new_key]
-        for user_tests in values:
-            new_test = input('Please enter the test grades: ')
-            gradebook_dict[new_key] = new_test
+    for k in range(keys):
+        gradebook_dict[k] = input('Please enter a name: ')
+        for j in range(values):
+            gradebook_dict[j] = input('Please enter the grade: ')
+    print(gradebook_dict)
+      
 
 
 main()
