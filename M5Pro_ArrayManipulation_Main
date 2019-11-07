@@ -85,10 +85,10 @@ def plus_array(user_array):
     else:
     
         new_array = user_array + 3
-        for row in new_array:
+        for row in user_array:
             for column in row:
                 print(column, end=' ')
-                print()     
+            print()    
         menu(user_array)
         
 def multy_array(user_array):
@@ -104,45 +104,7 @@ def multy_array(user_array):
         for row in new_array:
             for column in row:
                 print(column, end=' ')
-                print()     
+            print()     
         menu(user_array)
-
-main()# 01 November 2019
-# CSC121 M5Pro – Array Manipulations
-# Dustin Cooksey
-# This program takes an array and munipulates it in
-# different ways.
-
-import M5_Functions as m 
-
-def main():
-    print(f'{"MENU":<4}')
-    print("----------------------------------")
-    print('1) Create a 2-by-2 Array')
-    print('2) Display square Value for elements in array')
-    print('3) Add 3 to every element and display the result')
-    print('4) Multiply every element and display the result')
-    print('5) Exit')
-    
-    
-    user_input = input("Please make a decision: ")
-    
-    if user_input == '1':
-        m.create_array()
-        main()
-    elif user_input == '2':
-         m.square_array(user_array)
-    elif user_input =='3':
-         m.plus_array()
-    elif user_input == '4':
-         m.multy_array()
-    else:
-        print('Goodbye!')
-        
-    
- 
-
-
-
 
 main()
