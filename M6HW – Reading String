@@ -1,5 +1,5 @@
 # 04 November 2019
-# CSC121 M6HW – Reading String
+# CSC121 M6HW Reading String
 # Dustin Cooksey
 # This program takes a string input and counts the 
 # digits, non-digit characters, and whitspace.
@@ -7,7 +7,6 @@
 import re as r
 
 
-sentence = input('Please insert a sentence: ')
 def main():
     sentence = input('Please insert a sentence: ')
     print()
@@ -20,7 +19,8 @@ def menu(sentence):
     print('2) Number of Characters')
     print('3) Number of White Space')
     print('4) Number of Words')
-    print('5) Exit')
+    print('5) Enter a New Sentence')
+    print('6) Exit')
     
     user_input = input("Please make a choice: ")
     
@@ -32,17 +32,31 @@ def menu(sentence):
         display_blank(sentence) 
     elif user_input == '4':
         display_words(sentence) 
+    elif user_input == '5':
+        sentence = input('Please insert a sentence: ')
+        menu(sentence)
     else:
         print('Goodbye!')
         
 def display_digit(sentence):
-   
+   new_sent = r.findall(r'(\d)',sentence)
+   count = len(new_sent)
+   print('The number of digits is',count)
+   menu(sentence)
 def display_char(sentence):
-    
+    new_sent = r.findall(r'[a-z][A-Z]*',sentence)
+    count = len(new_sent)
+    print('The number of characters is',count)
+    menu(sentence)
 def display_blank(sentence):
-
+    new_sent = r.findall(r'(\s)',sentence)
+    count = len(new_sent)
+    print('The number of whitespace is',count)
+    menu(sentence)
 def display_words(sentence):
-
+    new_sent = len(r.findall(r'\w+', sentence))
+    print('The number of words is',new_sent)
+    menu(sentence)
     
 main()
 
