@@ -1,0 +1,38 @@
+# 04 November 2019
+# CSC121 M6Pro â€“ Alpha Tele Num Translator
+# Dustin Cooksey
+# This program takes a phone number and translates
+# if from text format to numberical
+
+
+
+def main():
+    
+    
+    number = input('Plesase enter a 10 digit phone number' 
+                   ' with the last 7 characters as letters: ')
+    
+    number = number.replace('A','2').replace('B','2').replace('C','2')
+    number = number.replace('D','3').replace('E','3').replace('F','3')
+    number = number.replace('G','4').replace('H','4').replace('I','4')
+    number = number.replace('J','5').replace('K','5').replace('L','5')
+    number = number.replace('M','6').replace('N','6').replace('O','6')
+    number = number.replace('P','7').replace('Q','7').replace('R','7')
+    number = number.replace('S','7')
+    number = number.replace('T','8').replace('U','8').replace('V','8')
+    number = number.replace('W','9').replace('X','9').replace('Y','9')
+    number = number.replace('Z','9')
+    
+    print(number)
+    
+    print('Would you like to enter another number?')
+    user_choice = input('Enter "y" for yes or "n" for no: ')
+    
+    if user_choice == 'y' or 'Y':
+        main()
+    else:
+        print('Goodbye!')
+    
+    
+    
+main()
