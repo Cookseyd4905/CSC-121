@@ -1,0 +1,79 @@
+# 01 December 2019
+# CSC121 M7HW1 Files Exceptions
+# Dustin Cooksey
+#  
+# 
+
+
+def main():
+    menu()
+def menu():
+    
+    print('Please make a selection from the Menu')
+    print('1) Create a text file')
+    print('2) Average of Values')
+    print('3) Total of Values')
+    print('4) Exit the Program')
+    choice = input('Please make a selection: ')
+    
+    
+    if choice == '1':
+        createFile()
+    elif choice == '2':
+        averageVal()
+    elif choice == '3':
+        totalVal()
+    elif choice == '4':
+        quit()
+    else:
+        print('Must enter a valid menu option!')
+        print('Please try again!\n')
+        menu()
+    
+    
+
+
+def createFile():
+    f = open("Numbers.txt","w+")
+    decision = 'y'
+    while decision.lower() == 'y':
+        number = input('Enter your number: ')
+        print('Would you like to enter another number? ')
+        f.write(number)
+        decision = input('Enter "y" for yes or "n" for no: ')
+    
+    f.close()
+    menu()
+    
+    
+def averageVal():
+    numList = []
+    try:
+        with open('Numbers.txt','r') as f:
+            for number in f:
+                numList.append(int(number.strip()))
+            
+        print(sum(numList))
+             
+   
+    except FileNotFoundError:
+        print('File has not been created')
+        print('Please create the file! \n')
+        main()
+        
+
+def totalVal():
+     try:
+        with open('Numbers.txt') as f:
+          numbers = f.readlines()
+          tot = sum(numbers)
+          print('The average of the numbers is '+ tot)
+        
+     except FileNotFoundError:
+        print('File has not been created')
+        print('Please create the file! \n')
+        main()
+    
+    
+    
+main()
