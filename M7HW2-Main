@@ -1,0 +1,47 @@
+# 01 December 2019
+# CSC121 M7HW2 Files Exceptions
+# Dustin Cooksey
+#  
+# 
+
+
+
+def main():
+    
+    get_input()
+
+def get_input():
+    
+    import schedule_module
+    
+    choice = int(input('How many classes are you taking? : '))
+    
+    collegeClass = []
+    
+    for clss in range(choice):
+        print('Please enter your class info: ')
+        
+        className = input("Enter class name: ")
+
+        classNum = input("Enter number for the class: ")
+
+        meetDays = input('How many days per week does the class meet? : ')
+
+        meetTime = input('What time of the day does the class meet? : ')
+    
+        class_schedule = schedule_module.Schedule(className, classNum, meetDays, meetTime)
+    
+    collegeClass.append(class_schedule)
+    
+    
+    title = "\nClall Name".ljust(6)+"Meeting Days".ljust(2)+"Meeting Times".ljust(5)
+    
+    
+    outFile = open('schedule.txt','w')
+    outFile.writelines(collegeClass)
+    
+    
+    
+    
+    
+main()
