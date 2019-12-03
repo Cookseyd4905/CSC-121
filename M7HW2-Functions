@@ -1,0 +1,52 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec  3 10:04:15 2019
+
+@author: Cookseyd4905
+"""
+
+class Schedule:
+    
+    def __init__(self, className, classNum, meetDays, meetTime):
+        
+        self.className = className
+        self.classNum = classNum
+        self.meetDays = meetDays
+        self.meetTime = meetTime
+       
+
+# setters
+
+    def set_cName(self, className):
+        
+        self.className = className
+
+    def set_cNum(self, classNum):
+        
+        self.classNum = classNum
+
+    def set_meetDays(self, meetDays):
+        
+        self.meetDays = meetDays
+
+    def set_meetTime(self, meetTime):
+        
+        self.meetTime = meetTime
+
+# getters
+
+    def get_cName(self):
+        
+        return self.className
+
+    def get_cNum(self):
+        
+        return self.classNum
+
+    def get_meetDays(self):
+        
+        return self.meetDays
+
+    def get_meetTime(self):
+        
+        return self.meetTime
