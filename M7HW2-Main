@@ -1,11 +1,11 @@
-# 01 December 2019
+# 03 December 2019
 # CSC121 M7HW2 Files Exceptions
 # Dustin Cooksey
-#  
-# 
+# This program takes a students class schedule from a text file
+# and outputs it to another file in a report.
 
 
-
+# Main function to call the modules.
 def main():
     print('Please make a selection from the Menu')
     print('1) Create Schedule File')
@@ -25,6 +25,7 @@ def main():
         print('Please try again!\n')
         main()
 
+# Module to get the input from the user and store it to the schedule text file.
 def get_input():
     
     import Schedule_module
@@ -36,7 +37,7 @@ def get_input():
     for clss in range(choice):
         print('Please enter your class info: ')
         
-        className = input("Enter class name: ")
+        className = input("Enter class name as 3 letter abbreviation: ")
 
         classNum = input("Enter number for the class: ")
 
@@ -49,34 +50,60 @@ def get_input():
         collegeClass.append(class_schedule)
      
     outFile = open('schedule.txt','w')
+    outFile.write('\n')
     for clss in collegeClass:
         outFile.writelines(clss.get_cName()+'\n')
         outFile.writelines(clss.get_cNum()+'\n')
         outFile.writelines(clss.get_meetDays()+'\n')
         outFile.writelines(clss.get_meetTime()+'\n')
         outFile.write('\n')
+        
     outFile.close()
     main()
-    
-  
+
+
+# Module to read the schedule file and create report writing it to the report file.
 def create_report():   
-    
-    outFile = open('report.txt','w')
-    title = "\nClass Name".ljust(12)+"Meeting Days".ljust(13)+"Meeting Times".ljust(10)
-    outFile.writelines(title+ '\n')
-    
-    with open('schedule.txt',mode='r') as inFile:
-        for item in inFile:
-            className = inFile.readline()
-            classNum = inFile.readline()
-            classDay = inFile.readline()
-            classMeet = inFile.readline()
-            outFile.write(str(className))
-            outFile.write(str(classNum))
-            outFile.write(str(classDay))
-            outFile.write(str(classMeet))
-#        
-#    outFile.close()
+    try:
+        name = input('What is the name of the student? :')
+        header = (name.ljust(5)+' 2019 Spring Schedule')
+        
+        outFile = open('report.txt','w')
+        outFile.write(header)
+        title = "\nClass Name".ljust(12)+"Meeting Days".ljust(13)+"Meeting Times".ljust(10)
+        outFile.writelines(title+ '\n')
+        
+        with open('schedule.txt',mode='r') as inFile:
+            for item in inFile:
+                className = inFile.readline()
+                classNum = inFile.readline()
+                classDay = inFile.readline()
+                classMeet = inFile.readline()
+                classNam = className.strip()
+                classNm = classNum.strip()
+                classDy = classDay.strip()
+                classMet = classMeet.strip()
+                rite = (str(classNam.ljust(3))+str(classNm.ljust(8))+str(classDy.ljust(13))+str(classMet.ljust(10))+'\n')
+                outFile.write(rite)
+            
+        outFile.close()
+        main()
+    except FileNotFoundError:
+        print('Schedule file has not been created')
+        print('Please create the file! \n')
+        main()
    
 main()
     
+## Create a menu to allow the user to choose to create a file to store the
+## schedule information in a class.
+
+## Create an exception to control whether the user enters invalid input.
+
+## If the user chooses to create the file, take the input and store it into
+## a text file.
+
+## If the user chooses to create the report file, read the previous file and
+## output it into a report in a new text file.
+
+## Create and exception in case the user chooses to create the report first.  
