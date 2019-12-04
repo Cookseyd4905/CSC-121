@@ -7,7 +7,7 @@
 outFile = open('logininfo.txt','w')
 
 title = ('Student Login Information'.center(0))
-header = "\nLast Name".ljust(11)+"First Name".ljust(11)+"ID Num".ljust(11)+'LoginID'.ljust(14)+'Email'.ljust(20)
+header = "\nLast Name".ljust(11)+"First Name".ljust(15)+"ID Num".ljust(14)+'LoginID'.ljust(18)+'Email'.ljust(40)
 outFile.write(title+'\n')
 outFile.write(header+'\n')
 
@@ -17,9 +17,10 @@ with open('studentInfo.txt','r') as inFile:
         
         loginID = lastName+firstName[0]+studentID[4]+studentID[5]+studentID[6]+studentID[7]
         
-        email = lastName+studentID[4]+studentID[5]+studentID[6]+studentID[7]+'@student.faytechcc.edu'
+        email = lastName+firstName[0]+studentID[4]+studentID[5]+studentID[6]+studentID[7]+'@student.faytechcc.edu'
         
-        rite = (str(lastName.ljust(11))+str(firstName.ljust(11))+str(studentID.ljust(11))
-        +str(loginID.ljust(14))+str(email.ljust(20))+'\n')  
+        rite = (str(lastName.ljust(10))+str(firstName.ljust(14))+str(studentID.ljust(12))
+        +str(loginID.ljust(20))+str(email.ljust(30))+'\n')  
         
         outFile.write(rite)
+outFile.close()
