@@ -1,0 +1,25 @@
+# 03 December 2019
+# CSC121 M7HW2 Files Exceptions
+# Dustin Cooksey
+# 
+# 
+
+outFile = open('logininfo.txt','w')
+
+title = ('Student Login Information'.center(0))
+header = "\nLast Name".ljust(11)+"First Name".ljust(11)+"ID Num".ljust(11)+'LoginID'.ljust(14)+'Email'.ljust(20)
+outFile.write(title+'\n')
+outFile.write(header+'\n')
+
+with open('studentInfo.txt','r') as inFile:
+    for item in inFile:
+        lastName, firstName, studentID = item.split()
+        
+        loginID = lastName+firstName[0]+studentID[4]+studentID[5]+studentID[6]+studentID[7]
+        
+        email = lastName+studentID[4]+studentID[5]+studentID[6]+studentID[7]+'@student.faytechcc.edu'
+        
+        rite = (str(lastName.ljust(11))+str(firstName.ljust(11))+str(studentID.ljust(11))
+        +str(loginID.ljust(14))+str(email.ljust(20))+'\n')  
+        
+        outFile.write(rite)
